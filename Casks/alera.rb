@@ -1,6 +1,6 @@
 cask "alera" do
-  version "0.74.0"
-  sha256 "affb0c499a68b1e2071556f28d4ac4fe2b905827c5c6c3ea87b6a40821ce8b10"
+  version "0.75.0"
+  sha256 "f39fe96d8eda2d8301b7927a6048b6b3f4197f72baaf62f4ef5d02e7d548906b"
 
   url "https://github.com/leynier/alera/releases/download/v#{version}/alera-#{version}-macos.tar.gz",
       verified: "github.com/leynier/alera/"
@@ -15,8 +15,10 @@ cask "alera" do
 
   # CI builds the macOS app on an Apple Silicon runner only, and the app targets
   # macOS 14. Claiming more would install a bundle that cannot run.
+  # Homebrew treats a symbol as "this version or newer"; the string comparison
+  # form (`">= :sonoma"`) is deprecated and warns on every brew command.
   depends_on arch: :arm64
-  depends_on macos: ">= :sonoma"
+  depends_on macos: :sonoma
 
   app "Alera.app"
 
