@@ -1,6 +1,6 @@
 cask "alera" do
-  version "0.82.0"
-  sha256 "5ad038bf93b360e321ce4026ab5fdaffe851b9afed0ca2ee6f89c06825ff4376"
+  version "0.83.0"
+  sha256 "af24e22cb9a18e2d7eec1c645e7f37cc05de065e719475a41c9233368c9f11d7"
 
   url "https://github.com/leynier/alera/releases/download/v#{version}/alera-#{version}-macos.tar.gz",
       verified: "github.com/leynier/alera/"
